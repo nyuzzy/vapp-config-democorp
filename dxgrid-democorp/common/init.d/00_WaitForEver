@@ -1,0 +1,5 @@
+echo "Waiting forever"
+
+tail -f /dev/null
+
+echo "Hmm not quite forever"

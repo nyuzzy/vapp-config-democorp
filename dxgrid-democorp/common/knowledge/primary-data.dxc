@@ -1,0 +1,17 @@
+# CA DXserver/config/knowledge/
+#
+# Knowledge configuration file written by dxnewdsa
+#
+# Refer to the Admin Guide for the format of the set dsa command.
+
+set dsa "primary-data" =
+{
+    prefix        = <c AU><o Democorp>
+    dsa-name      = <c AU><o Democorp><cn "primary-data">
+    dsa-password  = "secret"
+    address       = tcp "$PRIMARY_DATA_DSA_IP" port 2389
+    disp-psap     = DISP
+    snmp-port     = 2389
+    console-port  = 2345
+    dsa-flags     = multi-write, load-share, no-service-while-recovering
+};
