@@ -7,7 +7,7 @@ KNOWLEDGE_DIR=/solution/dxgrid-democorp/common/knowledge
 if [ "$CONFIG" == "dxgrid-democorp/primary-data" ]
 then
 
-        sed -i "s/tcp \"\$SECONDARY_DATA_DSA_IP\" port 2389/tcp \"$DXGRID_SECONDARY_SERVICE_SERVICE_HOST\" port 1389\, tcp \"$DXGRID_PRIMARY_SERVICE_SERVICE_HOST\" port 1389 /g" $KNOWLEDGE_DIR/*.dxc
+        sed -i "s/tcp \"\$SECONDARY_DATA_DSA_IP\" port 2389/tcp \"$DXGRID_SECONDARY_SERVICE_SERVICE_HOST\" port 2389\, tcp \"$DXGRID_PRIMARY_SERVICE_SERVICE_HOST\" port 2389 /g" $KNOWLEDGE_DIR/*.dxc
         sed -i "s/tcp \"\$SECONDARY_ROUTER_DSA_IP\" port 1389/tcp \"$DXGRID_SECONDARY_SERVICE_SERVICE_HOST\" port 1389\, tcp \"$DXGRID_PRIMARY_SERVICE_SERVICE_HOST\" port 1389 /g" $KNOWLEDGE_DIR/*.dxc
 
         sed -i "s/\$PRIMARY_ROUTER_DSA_IP/0.0.0.0/g" $KNOWLEDGE_DIR/*.dxc
@@ -16,7 +16,7 @@ fi
 
 if [ "$CONFIG" == "dxgrid-democorp/secondary-data" ]
 then
-        sed -i "s/tcp \"\$PRIMARY_DATA_DSA_IP\" port 2389/tcp \"$DXGRID_PRIMARY_SERVICE_SERVICE_HOST\" port 1389\, tcp \"$DXGRID_SECONDARY_SERVICE_SERVICE_HOST\" port 1389 /g" $KNOWLEDGE_DIR/*.dxc
+        sed -i "s/tcp \"\$PRIMARY_DATA_DSA_IP\" port 2389/tcp \"$DXGRID_PRIMARY_SERVICE_SERVICE_HOST\" port 2389\, tcp \"$DXGRID_SECONDARY_SERVICE_SERVICE_HOST\" port 2389 /g" $KNOWLEDGE_DIR/*.dxc
         sed -i "s/tcp \"\$PRIMARY_ROUTER_DSA_IP\" port 1389/tcp \"$DXGRID_PRIMARY_SERVICE_SERVICE_HOST\" port 1389\, tcp \"$DXGRID_SECONDARY_SERVICE_SERVICE_HOST\" port 1389 /g" $KNOWLEDGE_DIR/*.dxc
 
         sed -i "s/\$SECONDARY_ROUTER_DSA_IP/0.0.0.0/g" $KNOWLEDGE_DIR/*.dxc
